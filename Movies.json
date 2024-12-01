@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 1,
+    "Title": "Inception",
+    "Director": "Christopher Nolan",
+    "Genre": "Sci-Fi",
+    "ReleaseDate": "2010-07-16",
+    "Rating": 8.8
+  },
+  {
+    "Id": 2,
+    "Title": "The Dark Knight",
+    "Director": "Christopher Nolan",
+    "Genre": "Action",
+    "ReleaseDate": "2008-07-18",
+    "Rating": 9.0
+  },
+  {
+    "Id": 3,
+    "Title": "The Matrix",
+    "Director": "The Wachowskis",
+    "Genre": "Sci-Fi",
+    "ReleaseDate": "1999-03-31",
+    "Rating": 8.7
+  },
+  {
+    "Id": 4,
+    "Title": "The Shawshank Redemption",
+    "Director": "Frank Darabont",
+    "Genre": "Drama",
+    "ReleaseDate": "1994-09-22",
+    "Rating": 9.3
+  },
+  {
+    "Id": 5,
+    "Title": "Pulp Fiction",
+    "Director": "Quentin Tarantino",
+    "Genre": "Crime",
+    "ReleaseDate": "1994-10-14",
+    "Rating": 8.9
+  },
+  {
+    "Id": 6,
+    "Title": "Forrest Gump",
+    "Director": "Robert Zemeckis",
+    "Genre": "Drama",
+    "ReleaseDate": "1994-07-06",
+    "Rating": 8.8
+  },
+  {
+    "Id": 7,
+    "Title": "Fight Club",
+    "Director": "David Fincher",
+    "Genre": "Drama",
+    "ReleaseDate": "1999-10-15",
+    "Rating": 8.8
+  },
+  {
+    "Id": 8,
+    "Title": "Interstellar",
+    "Director": "Christopher Nolan",
+    "Genre": "Sci-Fi",
+    "ReleaseDate": "2014-11-07",
+    "Rating": 8.6
+  },
+  {
+    "Id": 9,
+    "Title": "The Godfather",
+    "Director": "Francis Ford Coppola",
+    "Genre": "Crime",
+    "ReleaseDate": "1972-03-24",
+    "Rating": 9.2
+  },
+  {
+    "Id": 10,
+    "Title": "The Lion King",
+    "Director": "Roger Allers, Rob Minkoff",
+    "Genre": "Animation",
+    "ReleaseDate": "1994-06-15",
+    "Rating": 8.5
+  }
+]
