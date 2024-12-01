@@ -14,7 +14,7 @@ public partial class EditPage : ContentPage
         BindingContext = Bike;
     }
 
-    /* ƒ≥€ кнопки "«берегти" */
+    /* Кнопка "Зберегти" */
     private async void SaveButtonHandler(object sender, EventArgs e)
     {
         try
@@ -27,14 +27,14 @@ public partial class EditPage : ContentPage
                 if (new[] { ModelEntry.Text, FrameMaterialEntry.Text, WheelDiameterEntry.Text, WeightEntry.Text, DescriptionEntry.Text }
                     .All(string.IsNullOrWhiteSpace))
                 {
-                    bool confirmDelete = await DisplayAlert("ѕ≥дтвердженн€", "”с≥ пол€ порожн≥. ¬идалити цей велосипед?", "“ак", "Ќ≥");
+                    bool confirmDelete = await DisplayAlert("Підтвердження видалення", "Ви дійсно хочете видалити цей запис?", "Так", "Ні");
                     if (confirmDelete)
                     {
                         mainPage.BikesCollection.Remove(bikeInCollection);
 
                         RefactoryHelper.RewriteJson(mainPage.BikesCollection);
 
-                        await DisplayAlert("”сп≥х", "¬елосипед видалено!", "OK");
+                        await DisplayAlert("Успіх", "Запис видалено!", "OK");
                         await Navigation.PopAsync();
                         return;
                     }
@@ -44,20 +44,20 @@ public partial class EditPage : ContentPage
                     }
                 }
 
-                // ѕерев≥рка на вал≥дн≥сть значень в обов'€зкових пол€х
+                // Перевірка на валідність заповнених полів
                 if (!RefactoryHelper.IsInvalidInputFieldsAlert(this, ModelEntry, WheelDiameterEntry, WeightEntry)[0])
                 {
-                    await DisplayAlert("ѕопередженн€!", "Ќеобх≥дно заповнити кожне з трьох обов'€зкових пол≥в:" +
-                    "\n\'ћодель\', \'ƒ≥аметр кол≥с\' та \'¬ага\'", "ќ ");
+                    await DisplayAlert("Помилка!", "Невірно заповнені такі поля:" +
+                    "\n\'Модель\', \'Матеріал рами\' та \'Вага\'", "ОК");
                     return;
                 }
                 else if (!RefactoryHelper.IsInvalidInputFieldsAlert(this, ModelEntry, WheelDiameterEntry, WeightEntry)[1])
                 {
-                    await DisplayAlert("ѕопередженн€!", "ѕол€: \'ƒ≥аметр кол≥с\' та \'¬ага\' повинн≥ м≥стити числов≥ значенн€ б≥льш≥ 0", "ќ ");
+                    await DisplayAlert("Помилка!", "Поля: \'Матеріал рами\' та \'Вага\' повинні містити значення більше 0", "ОК");
                     return;
                 }
 
-                // «береженн€ даних
+                // Оновлення даних
                 bikeInCollection.Model = ModelEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.FrameMaterial = FrameMaterialEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.WheelDiameter = WheelDiameterEntry.Text?.Trim() ?? string.Empty;
@@ -65,25 +65,25 @@ public partial class EditPage : ContentPage
                 bikeInCollection.Type = TypeEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.Description = DescriptionEntry.Text?.Trim() ?? string.Empty;
 
-                // «береженн€ оновленого списку у файл
+                // Перезаписування оновлених даних у файл
                 RefactoryHelper.RewriteJson(mainPage.BikesCollection);
 
-                await DisplayAlert("”сп≥х", "¬елосипед усп≥шно збережено!", "OK");
+                await DisplayAlert("Успіх", "Запис успішно збережено!", "OK");
 
                 await Navigation.PopAsync();
             }
             else
             {
-                await DisplayAlert("ѕомилка", "√оловну стор≥нку програми не знайдено.", "OK");
+                await DisplayAlert("Помилка", "Невідомий тип головної сторінки.", "OK");
             }
         }
         catch (Exception ex)
         {
-            await DisplayAlert("ѕомилка", $"Ќе вдалос€ зберегти велосипед через неспод≥вану помилку:\n{ex.Message}", "OK");
+            await DisplayAlert("Помилка", $"Не вдалося зберегти дані. Технічна помилка:\n{ex.Message}", "OK");
         }
     }
 
-    /* ƒ≥€ кпопки "—касувати" */
+    /* Кнопка "Скасувати" */
     private async void CancelButtonHandler(object sender, EventArgs e)
     {
         await Navigation.PopAsync();
