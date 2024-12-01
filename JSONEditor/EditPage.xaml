@@ -5,11 +5,21 @@
              Title="EditPage"
              NavigationPage.HasNavigationBar="False">
 
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#232526" Offset="0.0" />
+            <!-- Charcoal Gray -->
+            <GradientStop Color="#414345" Offset="1.0" />
+            <!-- Dark Slate Gray -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
     <ScrollView>
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
-            <Frame CornerRadius="0" BackgroundColor="#AFB3F7" >
                 <StackLayout>
-                    <Label Text="Редагування велосипеда" FontSize="36" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                    <Frame BorderColor="DarkOliveGreen" BackgroundColor="#28A745" Margin="0,5,0,10">
+                        <Label Text="Редагування велосипеда" TextColor="White" FontSize="36" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                    </Frame>
                     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,*" ColumnDefinitions="Auto,*" RowSpacing="15" ColumnSpacing="15" VerticalOptions="Center" HorizontalOptions="Center">
                         <Label Grid.Row="1" Grid.Column="0" Text="Модель*:" WidthRequest="100" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
                         <Label Grid.Row="2" Grid.Column="0" Text="Матеріал рами:" WidthRequest="100" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
