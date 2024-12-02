@@ -16,7 +16,7 @@
     
     <ScrollView>
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
-                <StackLayout>
+            <StackLayout>
                     <Frame BorderColor="DarkOliveGreen" BackgroundColor="#28A745" Margin="0,5,0,10">
                         <Label Text="Редагування велосипеда" TextColor="White" FontSize="36" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center" />
                     </Frame>
@@ -36,7 +36,7 @@
                         <Entry WidthRequest="600" BackgroundColor="White" x:Name="DescriptionEntry" Text="{Binding Description}" Grid.Row="6" Grid.Column="1"  HorizontalOptions="Center"/>
                     </Grid>
                 </StackLayout>
-            </Frame>
+            
             
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
                 <Button Text="Зберегти" FontSize="28" TextColor="White" CornerRadius="0" BackgroundColor="#7A93AC" BorderWidth="1" Clicked="SaveButtonHandler" />
