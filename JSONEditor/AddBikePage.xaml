@@ -29,7 +29,7 @@
                 <Label Grid.Row="5" Grid.Column="0" Text="Опис:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
 
                 <Entry WidthRequest="300" BackgroundColor="White" x:Name="ModelEntry" Grid.Row="0" Grid.Column="1"/>
-                <Entry WidthRequest="300" BackgroundColor="White" x:Name="FrameMaterialEntry" Grid.Row="1" Grid.Column="1"/>
+                <Entry WidthRequest="300" BackgroundColor="White" x:Name="MarkEntry" Grid.Row="1" Grid.Column="1"/>
                 <Entry WidthRequest="300" BackgroundColor="White" x:Name="WheelDiameterEntry" Grid.Row="2" Grid.Column="1"/>
                 <Entry WidthRequest="300" BackgroundColor="White" x:Name="WeightEntry" Grid.Row="3" Grid.Column="1"/>
                 <Entry WidthRequest="300" BackgroundColor="White" x:Name="TypeEntry" Grid.Row="4" Grid.Column="1"/>

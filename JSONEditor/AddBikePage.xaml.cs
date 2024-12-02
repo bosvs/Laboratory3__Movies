@@ -30,7 +30,7 @@ public partial class AddBikePage : ContentPage
         var newBike = new Bike
         {
             Model = ModelEntry.Text?.Trim(),
-            FrameMaterial = FrameMaterialEntry.Text?.Trim(),
+            FrameMaterial = MarkEntry.Text?.Trim(),
             WheelDiameter = WheelDiameterEntry.Text?.Trim(),
             Weight = WeightEntry.Text?.Trim(),
             Type = TypeEntry.Text?.Trim(),

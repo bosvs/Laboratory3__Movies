@@ -7,13 +7,13 @@ namespace JSONEditor
     {
         public static string FilePath { get; set; }
 
-        public ObservableCollection<Bike> BikesCollection { get; set; }
+        public ObservableCollection<Bike> CarsCollection { get; set; }
 
         public MainPage()
         {
             InitializeComponent();
             BikeList.HeightRequest = App.WindowHeight * 0.6667;
-            BikesCollection = new ObservableCollection<Bike>();
+            CarsCollection = new ObservableCollection<Bike>();
             BindingContext = this;
         }
 
@@ -24,7 +24,7 @@ namespace JSONEditor
 
             if (FilePath != null)
             {
-                RefactoryHelper.UpdateBikeList(this, BikesCollection);
+                RefactoryHelper.UpdateBikeList(this, CarsCollection);
             }
         }
 
@@ -41,7 +41,7 @@ namespace JSONEditor
                 else
                 {
                     FilePathLabel.Text = $"Обрано: {FilePath}";
-                    RefactoryHelper.UpdateBikeList(this, BikesCollection);
+                    RefactoryHelper.UpdateBikeList(this, CarsCollection);
                 }
             }
             catch(Exception ex) 
@@ -75,22 +75,22 @@ namespace JSONEditor
         /* Дія кнопки "Пошук" */
         private async void SearchHandler(object sender, EventArgs e)
         {
-            if (BikesCollection == null || !BikesCollection.Any())
+            if (CarsCollection == null || !CarsCollection.Any())
             {
                 await DisplayAlert("Увага", "Список атівок пустий", "OK");
                 return;
             }
 
             string modelFilter = ModelEntry.Text?.Trim().ToLower() ?? string.Empty;
-            string frameMaterialFilter = FrameMaterialEntry.Text?.Trim().ToLower() ?? string.Empty;
+            string markFilter = MarkEntry.Text?.Trim().ToLower() ?? string.Empty;
             string wheelDiameterFilter = (WheelDiameterEntry.Text?.Trim().ToLower() ?? string.Empty).Replace('.', ',');
             string weightFilter = (WeightEntry.Text?.Trim().ToLower() ?? string.Empty).Replace('.', ',');
             string typeFilter = TypeEntry.Text?.Trim().ToLower() ?? string.Empty;
             string descriptionFilter = DescriptionEntry.Text?.Trim().ToLower() ?? string.Empty;
 
-            var filteredBikes = BikesCollection.Where(bike =>
+            var filteredBikes = CarsCollection.Where(bike =>
                 (string.IsNullOrEmpty(modelFilter) || bike.Model.ToLower().Contains(modelFilter)) &&
-                (string.IsNullOrEmpty(frameMaterialFilter) || bike.FrameMaterial.ToLower().Contains(frameMaterialFilter)) &&
+                (string.IsNullOrEmpty(markFilter) || bike.FrameMaterial.ToLower().Contains(markFilter)) &&
                 (string.IsNullOrEmpty(wheelDiameterFilter) || Double.TryParse(wheelDiameterFilter, out var wheelDiameterFilterValue) && 
                 Double.TryParse(bike.WheelDiameter, out var wheelDiameter) && wheelDiameter == wheelDiameterFilterValue) &&
                 (string.IsNullOrEmpty(weightFilter) || Double.TryParse(weightFilter, out var weightFilterValue) && 
@@ -114,7 +114,7 @@ namespace JSONEditor
         private void ClearFiltersHander(object sender, EventArgs e)
         {
             ModelEntry.Text = string.Empty;
-            FrameMaterialEntry.Text = string.Empty;
+            MarkEntry.Text = string.Empty;
             WheelDiameterEntry.Text = string.Empty;
             WeightEntry.Text = string.Empty;
             TypeEntry.Text = string.Empty;

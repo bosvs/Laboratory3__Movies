@@ -22,17 +22,17 @@ public partial class EditPage : ContentPage
             if (Application.Current.MainPage is NavigationPage navigationPage &&
                 navigationPage.RootPage is MainPage mainPage)
             {
-                var bikeInCollection = mainPage.BikesCollection.FirstOrDefault(b => b.Model == Bike.Model);
+                var bikeInCollection = mainPage.CarsCollection.FirstOrDefault(b => b.Model == Bike.Model);
 
-                if (new[] { ModelEntry.Text, FrameMaterialEntry.Text, WheelDiameterEntry.Text, WeightEntry.Text, DescriptionEntry.Text }
+                if (new[] { ModelEntry.Text, MarkEntry.Text, WheelDiameterEntry.Text, WeightEntry.Text, DescriptionEntry.Text }
                     .All(string.IsNullOrWhiteSpace))
                 {
                     bool confirmDelete = await DisplayAlert("Видалення інформації", "Ви очно хочете видалити це", "Так", "Ні");
                     if (confirmDelete)
                     {
-                        mainPage.BikesCollection.Remove(bikeInCollection);
+                        mainPage.CarsCollection.Remove(bikeInCollection);
 
-                        RefactoryHelper.RewriteJson(mainPage.BikesCollection);
+                        RefactoryHelper.RewriteJson(mainPage.CarsCollection);
 
                         await DisplayAlert("Перемога", "Інформаціія видалено!", "OK");
                         await Navigation.PopAsync();
@@ -58,14 +58,14 @@ public partial class EditPage : ContentPage
 
                 // Збереження даних
                 bikeInCollection.Model = ModelEntry.Text?.Trim() ?? string.Empty;
-                bikeInCollection.FrameMaterial = FrameMaterialEntry.Text?.Trim() ?? string.Empty;
+                bikeInCollection.FrameMaterial = MarkEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.WheelDiameter = WheelDiameterEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.Weight = WeightEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.Type = TypeEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.Description = DescriptionEntry.Text?.Trim() ?? string.Empty;
 
                 // Перезапис даних у файл
-                RefactoryHelper.RewriteJson(mainPage.BikesCollection);
+                RefactoryHelper.RewriteJson(mainPage.CarsCollection);
 
                 await DisplayAlert("Перемога", "Запис успішно збережено!", "OK");
 

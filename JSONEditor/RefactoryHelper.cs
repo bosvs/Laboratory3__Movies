@@ -94,9 +94,9 @@ namespace JSONEditor
         }
 
         /// <summary>
-        /// Парсить *.json файл та оновлює <paramref name="BikesCollection"/> на основі отриманих даних
+        /// Парсить *.json файл та оновлює <paramref name="CarsCollection"/> на основі отриманих даних
         /// </summary>
-        public static async void UpdateBikeList(Page page, ObservableCollection<Bike> BikesCollection)
+        public static async void UpdateBikeList(Page page, ObservableCollection<Bike> CarsCollection)
         {
             if (string.IsNullOrEmpty(MainPage.FilePath)) return;
 
@@ -118,10 +118,10 @@ namespace JSONEditor
 
                 if (bikes != null)
                 {
-                    BikesCollection.Clear();
+                    CarsCollection.Clear();
                     foreach (var bike in bikes)
                     {
-                        BikesCollection.Add(bike);
+                        CarsCollection.Add(bike);
                     }
                 }
             }

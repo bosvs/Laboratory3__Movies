@@ -68,7 +68,7 @@
                                 <Label Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Start" Text="Опис" FontAttributes="Bold" />
                             </Grid>
 
-                            <CollectionView Grid.Row="1" x:Name="BikesCollectionView" ItemsSource="{Binding BikesCollection}" SelectionMode="None">
+                            <CollectionView Grid.Row="1" x:Name="BikesCollectionView" ItemsSource="{Binding CarsCollection}" SelectionMode="None">
                                 <CollectionView.ItemTemplate>
                                     <DataTemplate>
                                         <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="1.5*,*,0.8*,0.8*,*,*,1.5*" ColumnSpacing="10">
@@ -105,7 +105,7 @@
                             <Label Grid.Row="6" Grid.Column="0" WidthRequest="100" Text="Опис:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
 
                             <Entry Grid.Row="1" Grid.Column="1" x:Name="ModelEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести модель автомобіля" BackgroundColor="White" TextColor="Black"/>
-                            <Entry Grid.Row="2" Grid.Column="1" x:Name="FrameMaterialEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести марку автомобіля" BackgroundColor="White" TextColor="Black"/>
+                            <Entry Grid.Row="2" Grid.Column="1" x:Name="MarkEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести марку автомобіля" BackgroundColor="White" TextColor="Black"/>
                             <Entry Grid.Row="3" Grid.Column="1" x:Name="WheelDiameterEntry " PlaceholderColor="#7A93AC" Placeholder="Ввести діаметр дисків" BackgroundColor="White" TextColor="Black"/>
                             <Entry Grid.Row="4" Grid.Column="1" x:Name="WeightEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести вагу автомобіля" BackgroundColor="White" TextColor="Black"/>
                             <Entry Grid.Row="5" Grid.Column="1" x:Name="TypeEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести тип автомобіля" BackgroundColor="White" TextColor="Black"/>

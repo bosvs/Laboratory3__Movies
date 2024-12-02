@@ -29,7 +29,7 @@
                 <Label Grid.Row="5" Grid.Column="0" Text="Опис:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
 
                 <Entry WidthRequest="300" BackgroundColor="White" x:Name="ModelEntry" Text="{Binding Model}" Grid.Row="0" Grid.Column="1"/>
-                <Entry WidthRequest="300" BackgroundColor="White" x:Name="FrameMaterialEntry" Text="{Binding FrameMaterial}" Grid.Row="1" Grid.Column="1"/>
+                <Entry WidthRequest="300" BackgroundColor="White" x:Name="MarkEntry" Text="{Binding FrameMaterial}" Grid.Row="1" Grid.Column="1"/>
                 <Entry WidthRequest="300" BackgroundColor="White" x:Name="WheelDiameterEntry" Text="{Binding WheelDiameter}" Grid.Row="2" Grid.Column="1"/>
                 <Entry WidthRequest="300" BackgroundColor="White" x:Name="WeightEntry" Text="{Binding Weight}" Grid.Row="3" Grid.Column="1"/>
                 <Entry WidthRequest="300" BackgroundColor="White" x:Name="TypeEntry" Text="{Binding Type}" Grid.Row="4" Grid.Column="1"/>
