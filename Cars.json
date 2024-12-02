@@ -1,7 +1,7 @@
 [
   {
     "Model": "Corolla",
-    "FrameMaterial": "Toyota",
+    "Mark": "Toyota",
     "WheelDiameter": "15",
     "Weight": "1300",
     "Type": "Sedan",
@@ -9,7 +9,7 @@
   },
   {
     "Model": "Mustang",
-    "FrameMaterial": "Ford",
+    "Mark": "Ford",
     "WheelDiameter": "1",
     "Weight": "1600",
     "Type": "седан",
@@ -17,7 +17,7 @@
   },
   {
     "Model": "Model S",
-    "FrameMaterial": "Tesla",
+    "Mark": "Tesla",
     "WheelDiameter": "19",
     "Weight": "2000",
     "Type": "Sedan",
@@ -25,23 +25,23 @@
   },
   {
     "Model": "Civic",
-    "FrameMaterial": "Honda",
+    "Mark": "Honda",
     "WheelDiameter": "16",
-    "Weight": "1400",
-    "Type": "Sedan",
+    "Weight": "10",
+    "Type": "diog",
     "Description": "Надійний компактний седан, відомий своєю ефективністю та довговічністю."
   },
   {
     "Model": "Camaro",
-    "FrameMaterial": "Chevrolet",
-    "WheelDiameter": "2",
+    "Mark": "Chevrolet",
+    "WheelDiameter": "15",
     "Weight": "1700",
     "Type": "Coupe",
     "Description": "Спортивний автомобіль високої продуктивності з сміливим, агресивним дизайном."
   },
   {
     "Model": "3 Series",
-    "FrameMaterial": "BMW",
+    "Mark": "BMW",
     "WheelDiameter": "17",
     "Weight": "1500",
     "Type": "Sedan",
@@ -49,7 +49,7 @@
   },
   {
     "Model": "C-Class",
-    "FrameMaterial": "Mercedes-Benz",
+    "Mark": "Mercedes-Benz",
     "WheelDiameter": "18",
     "Weight": "1600",
     "Type": "Sedan",
@@ -57,7 +57,7 @@
   },
   {
     "Model": "A4",
-    "FrameMaterial": "Audi",
+    "Mark": "Audi",
     "WheelDiameter": "17",
     "Weight": "1500",
     "Type": "Sedan",
@@ -65,7 +65,7 @@
   },
   {
     "Model": "Wrangler",
-    "FrameMaterial": "Jeep",
+    "Mark": "Jeep",
     "WheelDiameter": "18",
     "Weight": "1800",
     "Type": "SUV",
@@ -73,7 +73,7 @@
   },
   {
     "Model": "Q7",
-    "FrameMaterial": "Audi",
+    "Mark": "Audi",
     "WheelDiameter": "20",
     "Weight": "2300",
     "Type": "SUV",

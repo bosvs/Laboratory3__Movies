@@ -16,7 +16,7 @@ public partial class AddBikePage : ContentPage
         // Валідація
         if (!RefactoryHelper.IsInvalidInputFieldsAlert(this, ModelEntry, WheelDiameterEntry, WeightEntry)[0])
         {
-            await DisplayAlert("Увага!", "Обов'язкові поля вони на тебе обов'язкові:" +
+            await DisplayAlert("Увага!", "Обов'язкові поля вони на те і є обов'язкові:" +
             "\n\'Модель\', \'Діаметр коліс\' та \'Вага\'", "ОК");
             return;
         }
@@ -27,10 +27,10 @@ public partial class AddBikePage : ContentPage
         }
 
         // Створення нової авттівки
-        var newBike = new Bike
+        var newBike = new Car
         {
             Model = ModelEntry.Text?.Trim(),
-            FrameMaterial = MarkEntry.Text?.Trim(),
+            Mark = MarkEntry.Text?.Trim(),
             WheelDiameter = WheelDiameterEntry.Text?.Trim(),
             Weight = WeightEntry.Text?.Trim(),
             Type = TypeEntry.Text?.Trim(),
@@ -39,14 +39,14 @@ public partial class AddBikePage : ContentPage
 
         // Загррузка автівок з файлу
         var filePath = Path.Combine(FileSystem.AppDataDirectory, MainPage.FilePath);
-        ObservableCollection<Bike> bikesList;
+        ObservableCollection<Car> bikesList;
 
         if (File.Exists(filePath))
         {
             var json = await File.ReadAllTextAsync(filePath);
-            bikesList = JsonSerializer.Deserialize<ObservableCollection<Bike>>(json);
+            bikesList = JsonSerializer.Deserialize<ObservableCollection<Car>>(json);
         }
-        else bikesList = new ObservableCollection<Bike>();
+        else bikesList = new ObservableCollection<Car>();
 
         // Пушнути ну автівку до списку
         bikesList.Add(newBike);

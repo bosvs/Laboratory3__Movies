@@ -57,7 +57,7 @@
                 <Grid RowSpacing="15" ColumnSpacing="15" Padding="15" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,*" ColumnDefinitions="*,*,*,*,*,*,*,*,*">
 
                     <!-- Car List Block -->
-                    <Frame x:Name="BikeList" Grid.Row="1" Grid.Column="3" Grid.RowSpan="6" Grid.ColumnSpan="6" CornerRadius="30" BorderColor="Gray" VerticalOptions="Start" HorizontalOptions="Fill">
+                    <Frame x:Name="CarList" Grid.Row="1" Grid.Column="3" Grid.RowSpan="6" Grid.ColumnSpan="6" CornerRadius="30" BorderColor="Gray" VerticalOptions="Start" HorizontalOptions="Fill">
                         <Grid RowDefinitions="Auto,*">
                             <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="1.5*,*,0.8*,0.8*,*,*,1.5*" ColumnSpacing="10">
                                 <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start" Text="Модель" FontAttributes="Bold" />
@@ -68,12 +68,12 @@
                                 <Label Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Start" Text="Опис" FontAttributes="Bold" />
                             </Grid>
 
-                            <CollectionView Grid.Row="1" x:Name="BikesCollectionView" ItemsSource="{Binding CarsCollection}" SelectionMode="None">
+                            <CollectionView Grid.Row="1" x:Name="CarsCollectionView" ItemsSource="{Binding CarsCollection}" SelectionMode="None">
                                 <CollectionView.ItemTemplate>
                                     <DataTemplate>
                                         <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="1.5*,*,0.8*,0.8*,*,*,1.5*" ColumnSpacing="10">
                                             <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding Model}" />
-                                            <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding FrameMaterial}" />
+                                            <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding Mark}" />
                                             <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding WheelDiameter}" />
                                             <Label Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding Weight}" />
                                             <Label Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding Type}" />
@@ -82,7 +82,7 @@
                                                     👁
                                                 </Button.Text>
                                             </Button>
-                                            <Button Grid.Row="0" Grid.Column="6" Text="Редагувати" BackgroundColor="#DAA520" Clicked="EditBikeHandler" HeightRequest="10" CornerRadius="10" TextColor="White"/>
+                                            <Button Grid.Row="0" Grid.Column="6" Text="Редагувати" BackgroundColor="#DAA520" Clicked="EditCarHandler" HeightRequest="10" CornerRadius="10" TextColor="White"/>
                                             <BoxView Grid.Row="1" Grid.ColumnSpan="6" HeightRequest="10" BackgroundColor="Transparent"/>
                                         </Grid>
                                     </DataTemplate>
@@ -95,7 +95,7 @@
                     <Frame Grid.Row="1" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="3" BorderColor="Grey" CornerRadius="10">
                         <Grid RowDefinitions="*,*,*,*,*,*,*,*" ColumnDefinitions="Auto, *" ColumnSpacing="10" RowSpacing="10">
                             <Grid Grid.Row="0" Grid.ColumnSpan="2" ColumnDefinitions="*">
-                                <Button Grid.Row="0" Grid.Column="6" BackgroundColor="#556B2F" TextColor="White" CornerRadius="5" Text="Додати Автомобіль" Clicked="AddBikeHandler"/>
+                                <Button Grid.Row="0" Grid.Column="6" BackgroundColor="#556B2F" TextColor="White" CornerRadius="5" Text="Додати Автомобіль" Clicked="AddCarHandler"/>
                             </Grid>
                             <Label Grid.Row="1" Grid.Column="0" WidthRequest="100" Text="Модель:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
                             <Label Grid.Row="2" Grid.Column="0" WidthRequest="100" Text="Марка:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />

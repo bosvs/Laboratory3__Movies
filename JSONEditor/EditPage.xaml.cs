@@ -5,13 +5,13 @@ namespace JSONEditor;
 
 public partial class EditPage : ContentPage
 {
-    private Bike Bike { get; set; }
+    private Car Car { get; set; }
 
-    public EditPage(Bike bike)
+    public EditPage(Car bike)
     {
         InitializeComponent();
-        Bike = bike;
-        BindingContext = Bike;
+        Car = bike;
+        BindingContext = Car;
     }
 
     /* Кнопка "Зберегти" */
@@ -22,7 +22,7 @@ public partial class EditPage : ContentPage
             if (Application.Current.MainPage is NavigationPage navigationPage &&
                 navigationPage.RootPage is MainPage mainPage)
             {
-                var bikeInCollection = mainPage.CarsCollection.FirstOrDefault(b => b.Model == Bike.Model);
+                var bikeInCollection = mainPage.CarsCollection.FirstOrDefault(b => b.Model == Car.Model);
 
                 if (new[] { ModelEntry.Text, MarkEntry.Text, WheelDiameterEntry.Text, WeightEntry.Text, DescriptionEntry.Text }
                     .All(string.IsNullOrWhiteSpace))
@@ -58,7 +58,7 @@ public partial class EditPage : ContentPage
 
                 // Збереження даних
                 bikeInCollection.Model = ModelEntry.Text?.Trim() ?? string.Empty;
-                bikeInCollection.FrameMaterial = MarkEntry.Text?.Trim() ?? string.Empty;
+                bikeInCollection.Mark = MarkEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.WheelDiameter = WheelDiameterEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.Weight = WeightEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.Type = TypeEntry.Text?.Trim() ?? string.Empty;

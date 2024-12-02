@@ -7,13 +7,13 @@ namespace JSONEditor
     {
         public static string FilePath { get; set; }
 
-        public ObservableCollection<Bike> CarsCollection { get; set; }
+        public ObservableCollection<Car> CarsCollection { get; set; }
 
         public MainPage()
         {
             InitializeComponent();
-            BikeList.HeightRequest = App.WindowHeight * 0.6667;
-            CarsCollection = new ObservableCollection<Bike>();
+            CarList.HeightRequest = App.WindowHeight * 0.6667;
+            CarsCollection = new ObservableCollection<Car>();
             BindingContext = this;
         }
 
@@ -24,7 +24,7 @@ namespace JSONEditor
 
             if (FilePath != null)
             {
-                RefactoryHelper.UpdateBikeList(this, CarsCollection);
+                RefactoryHelper.UpdateCarList(this, CarsCollection);
             }
         }
 
@@ -41,7 +41,7 @@ namespace JSONEditor
                 else
                 {
                     FilePathLabel.Text = $"Обрано: {FilePath}";
-                    RefactoryHelper.UpdateBikeList(this, CarsCollection);
+                    RefactoryHelper.UpdateCarList(this, CarsCollection);
                 }
             }
             catch(Exception ex) 
@@ -62,7 +62,7 @@ namespace JSONEditor
         }
 
         /* Дія кнопки "+Велосипед" */
-        private async void AddBikeHandler(object sender, EventArgs e)
+        private async void AddCarHandler(object sender, EventArgs e)
         {
             if (FilePath == null)
                 await DisplayAlert("Помилка", "Не вдається додати вашу автівку в *.json файл!", "OK");
@@ -88,20 +88,20 @@ namespace JSONEditor
             string typeFilter = TypeEntry.Text?.Trim().ToLower() ?? string.Empty;
             string descriptionFilter = DescriptionEntry.Text?.Trim().ToLower() ?? string.Empty;
 
-            var filteredBikes = CarsCollection.Where(bike =>
-                (string.IsNullOrEmpty(modelFilter) || bike.Model.ToLower().Contains(modelFilter)) &&
-                (string.IsNullOrEmpty(markFilter) || bike.FrameMaterial.ToLower().Contains(markFilter)) &&
+            var filteredCars = CarsCollection.Where(car =>
+                (string.IsNullOrEmpty(modelFilter) || car.Model.ToLower().Contains(modelFilter)) &&
+                (string.IsNullOrEmpty(markFilter) || car.Mark.ToLower().Contains(markFilter)) &&
                 (string.IsNullOrEmpty(wheelDiameterFilter) || Double.TryParse(wheelDiameterFilter, out var wheelDiameterFilterValue) && 
-                Double.TryParse(bike.WheelDiameter, out var wheelDiameter) && wheelDiameter == wheelDiameterFilterValue) &&
+                Double.TryParse(car.WheelDiameter, out var wheelDiameter) && wheelDiameter == wheelDiameterFilterValue) &&
                 (string.IsNullOrEmpty(weightFilter) || Double.TryParse(weightFilter, out var weightFilterValue) && 
-                Double.TryParse(bike.Weight, out var weight) && weight == weightFilterValue) &&
-                (string.IsNullOrEmpty(typeFilter) || bike.Type.ToLower().Contains(typeFilter)) &&
-                (string.IsNullOrEmpty(descriptionFilter) || bike.Description.ToLower().Contains(descriptionFilter))
+                Double.TryParse(car.Weight, out var weight) && weight == weightFilterValue) &&
+                (string.IsNullOrEmpty(typeFilter) || car.Type.ToLower().Contains(typeFilter)) &&
+                (string.IsNullOrEmpty(descriptionFilter) || car.Description.ToLower().Contains(descriptionFilter))
             ).ToList();
 
-            if (filteredBikes.Any())
+            if (filteredCars.Any())
             {
-                BikesCollectionView.ItemsSource = new ObservableCollection<Bike>(filteredBikes);
+                CarsCollectionView.ItemsSource = new ObservableCollection<Car>(filteredCars);
             }
             else
             {
@@ -124,19 +124,19 @@ namespace JSONEditor
         /* Дія кнопки "Глянути" */
         private async void ViewDescriptionHandler(object sender, EventArgs e)
         {
-            if (sender is Button button && button.BindingContext is Bike bike)
+            if (sender is Button button && button.BindingContext is Car car)
             {
-                string description = string.IsNullOrWhiteSpace(bike.Description) ? "Нічого" : bike.Description;
+                string description = string.IsNullOrWhiteSpace(car.Description) ? "Нічого" : car.Description;
                 await DisplayAlert("Опис автівки", description, "OK");
             }
         }
         
         /* Дія кнопки "Редагувати"*/
-        private async void EditBikeHandler(object sender, EventArgs e)
+        private async void EditCarHandler(object sender, EventArgs e)
         {
-            if (sender is Button button && button.BindingContext is Bike bike)
+            if (sender is Button button && button.BindingContext is Car car)
             {
-                await Navigation.PushAsync(new EditPage(bike));
+                await Navigation.PushAsync(new EditPage(car));
             }
         }
     }

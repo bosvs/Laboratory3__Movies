@@ -31,7 +31,7 @@ namespace JSONEditor
             {
                 // пробна десеріалізація з метою виявити потенційну помилку
                 var json = await File.ReadAllTextAsync(result.FullPath);
-                var Bikes = JsonSerializer.Deserialize<ObservableCollection<Bike>>(json);
+                var Cars = JsonSerializer.Deserialize<ObservableCollection<Car>>(json);
                 return result.FullPath;
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace JSONEditor
         /// Допоміжний метод, який перезаписує *.json файл враховуючи оновлений список <paramref name="data"/>
         /// </summary>
         /// <param name="data"></param>
-        public static void RewriteJson(ObservableCollection<Bike> data)
+        public static void RewriteJson(ObservableCollection<Car> data)
         {
             string updatedJson = JsonSerializer.Serialize(data, new JsonSerializerOptions
             {
@@ -96,7 +96,7 @@ namespace JSONEditor
         /// <summary>
         /// Парсить *.json файл та оновлює <paramref name="CarsCollection"/> на основі отриманих даних
         /// </summary>
-        public static async void UpdateBikeList(Page page, ObservableCollection<Bike> CarsCollection)
+        public static async void UpdateCarList(Page page, ObservableCollection<Car> CarsCollection)
         {
             if (string.IsNullOrEmpty(MainPage.FilePath)) return;
 
@@ -104,24 +104,24 @@ namespace JSONEditor
             {
                 string jsonContent = File.ReadAllText(MainPage.FilePath);
 
-                var bikes = JsonSerializer.Deserialize<List<Bike>>(jsonContent, new JsonSerializerOptions
+                var cars = JsonSerializer.Deserialize<List<Car>>(jsonContent, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
 
-                if (bikes == null) return;
+                if (cars == null) return;
 
-                bikes.RemoveAll(bike =>
-                    string.IsNullOrWhiteSpace(bike.Model) ||
-                    string.IsNullOrWhiteSpace(bike.WheelDiameter) ||
-                    string.IsNullOrWhiteSpace(bike.Weight));
+                cars.RemoveAll(car =>
+                    string.IsNullOrWhiteSpace(car.Model) ||
+                    string.IsNullOrWhiteSpace(car.WheelDiameter) ||
+                    string.IsNullOrWhiteSpace(car.Weight));
 
-                if (bikes != null)
+                if (cars != null)
                 {
                     CarsCollection.Clear();
-                    foreach (var bike in bikes)
+                    foreach (var car in cars)
                     {
-                        CarsCollection.Add(bike);
+                        CarsCollection.Add(car);
                     }
                 }
             }
