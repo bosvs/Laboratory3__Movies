@@ -1,82 +1,82 @@
 [
   {
     "Model": "Corolla",
-    "FrameMaterial": "Steel",
+    "FrameMaterial": "Toyota",
     "WheelDiameter": "15",
     "Weight": "1300",
     "Type": "Sedan",
-    "Description": "A compact and fuel-efficient sedan from Toyota."
+    "Description": "Компактний та економічний седан від Toyota."
   },
   {
     "Model": "Mustang",
-    "FrameMaterial": "Aluminum",
-    "WheelDiameter": "18",
+    "FrameMaterial": "Ford",
+    "WheelDiameter": "1",
     "Weight": "1600",
-    "Type": "Coupe",
-    "Description": "An iconic American muscle car with powerful performance."
+    "Type": "седан",
+    "Description": "Іконічний американський м’язовий автомобіль з потужною продуктивністю."
   },
   {
     "Model": "Model S",
-    "FrameMaterial": "Aluminum",
+    "FrameMaterial": "Tesla",
     "WheelDiameter": "19",
     "Weight": "2000",
     "Type": "Sedan",
-    "Description": "A fully electric luxury sedan with cutting-edge technology."
+    "Description": "Повністю електричний розкішний седан з передовими технологіями."
   },
   {
     "Model": "Civic",
-    "FrameMaterial": "Steel",
+    "FrameMaterial": "Honda",
     "WheelDiameter": "16",
     "Weight": "1400",
     "Type": "Sedan",
-    "Description": "A reliable compact sedan known for its efficiency and longevity."
+    "Description": "Надійний компактний седан, відомий своєю ефективністю та довговічністю."
   },
   {
     "Model": "Camaro",
-    "FrameMaterial": "Aluminum",
+    "FrameMaterial": "Chevrolet",
     "WheelDiameter": "17",
     "Weight": "1700",
     "Type": "Coupe",
-    "Description": "A high-performance sports car with a bold, aggressive design."
+    "Description": "Спортивний автомобіль високої продуктивності з сміливим, агресивним дизайном."
   },
   {
     "Model": "3 Series",
-    "FrameMaterial": "Aluminum",
+    "FrameMaterial": "BMW",
     "WheelDiameter": "17",
     "Weight": "1500",
     "Type": "Sedan",
-    "Description": "A premium sedan offering luxury, performance, and style."
+    "Description": "Преміум седан, який поєднує розкіш, продуктивність та стиль."
   },
   {
     "Model": "C-Class",
-    "FrameMaterial": "Aluminum",
+    "FrameMaterial": "Mercedes-Benz",
     "WheelDiameter": "18",
     "Weight": "1600",
     "Type": "Sedan",
-    "Description": "A luxury sedan combining comfort, performance, and elegance."
+    "Description": "Розкішний седан, що поєднує комфорт, продуктивність і елегантність."
   },
   {
     "Model": "A4",
-    "FrameMaterial": "Aluminum",
+    "FrameMaterial": "Audi",
     "WheelDiameter": "17",
     "Weight": "1500",
     "Type": "Sedan",
-    "Description": "A premium sedan with a refined design and advanced features."
+    "Description": "Преміум седан з вишуканим дизайном і передовими функціями."
   },
   {
     "Model": "Wrangler",
-    "FrameMaterial": "Steel",
+    "FrameMaterial": "Jeep",
     "WheelDiameter": "18",
     "Weight": "1800",
     "Type": "SUV",
-    "Description": "A rugged off-road vehicle with exceptional 4x4 capabilities."
+    "Description": "Міцний позашляховик з винятковими можливостями 4x4."
   },
   {
     "Model": "Q7",
-    "FrameMaterial": "Aluminum",
+    "FrameMaterial": "Audi",
     "WheelDiameter": "20",
     "Weight": "2300",
     "Type": "SUV",
-    "Description": "A luxury SUV with advanced features and ample space."
+    "Description": "Розкішний SUV з передовими функціями та просторим салоном."
   }
 ]

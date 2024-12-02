@@ -54,18 +54,18 @@ namespace JSONEditor
         /* Дія кнопки "Інформація" */
         private async void InfoButtonHandler(object sender, EventArgs e)
         {
-            string studentInfo = "Лабораторна робота Сікори Віктора, студента групи К-26" +
-                                 "\n\nПрограма створена для роботи з файлами у форматі JSON. Вона дозволяє відкривати, редагувати, видаляти та додавати дані," +
+            string studentInfo = "Лабораторна роботу виконав остапович Всеволод та чат гпт, обидва студенти групи К-26" +
+                                 "\n\nУ цьому проджекті можна: відкривати, редагувати, видаляти та додавати інформацію, до json файлу" +
                                  " а також швидко виконувати пошук за різними параметрами." +
-                                 "\n\nПредметна область даних — велосипеди";
-            await DisplayAlert("Про програму", studentInfo, "ОК");
+                                 "\n\nМашини - це предметна область  цього проєкту";
+            await DisplayAlert("Про проєкт", studentInfo, "ОК");
         }
 
         /* Дія кнопки "+Велосипед" */
         private async void AddBikeHandler(object sender, EventArgs e)
         {
             if (FilePath == null)
-                await DisplayAlert("Помилка", "Неможливо додати велосипед у ще не обраний *.json файл!", "OK");
+                await DisplayAlert("Помилка", "Не вдається додати вашу автівку в *.json файл!", "OK");
             else
             {
                 await Navigation.PushAsync(new AddBikePage());
@@ -77,7 +77,7 @@ namespace JSONEditor
         {
             if (BikesCollection == null || !BikesCollection.Any())
             {
-                await DisplayAlert("Попередження", "Список велосипедів порожній.", "OK");
+                await DisplayAlert("Увага", "Список атівок пустий", "OK");
                 return;
             }
 
@@ -105,7 +105,7 @@ namespace JSONEditor
             }
             else
             {
-                await DisplayAlert("Результат", "Жоден велосипед не відповідає заданим критеріям пошуку.", "OK");
+                await DisplayAlert("Результат", "За вашим запитом нічого не знайдено", "OK");
                 return;
             }
         }
@@ -126,8 +126,8 @@ namespace JSONEditor
         {
             if (sender is Button button && button.BindingContext is Bike bike)
             {
-                string description = string.IsNullOrWhiteSpace(bike.Description) ? "Тут пусто" : bike.Description;
-                await DisplayAlert("Опис велосипеда", description, "OK");
+                string description = string.IsNullOrWhiteSpace(bike.Description) ? "Нічого" : bike.Description;
+                await DisplayAlert("Опис автівки", description, "OK");
             }
         }
         

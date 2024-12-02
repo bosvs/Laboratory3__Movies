@@ -17,13 +17,13 @@
     <ScrollView>
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
             <Frame BorderColor="DarkOliveGreen" BackgroundColor="#28A745" Margin="0,5,0,10">
-                <Label Text="Додати новий велосипед" TextColor="White" FontSize="36" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                <Label Text="Додати нове авто" TextColor="White" FontSize="36" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center" />
             </Frame>
 
             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*" RowSpacing="15" ColumnSpacing="15" VerticalOptions="Center" HorizontalOptions="Center">
                 <Label Grid.Row="0" Grid.Column="0" Text="Модель*:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
-                <Label Grid.Row="1" Grid.Column="0" Text="Матеріал рами:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
-                <Label Grid.Row="2" Grid.Column="0" Text="Діаметр коліс*:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Марка:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
+                <Label Grid.Row="2" Grid.Column="0" Text="Діаметр дисків*:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
                 <Label Grid.Row="3" Grid.Column="0" Text="Вага(кг)*:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
                 <Label Grid.Row="4" Grid.Column="0" Text="Тип:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
                 <Label Grid.Row="5" Grid.Column="0" Text="Опис:" FontSize="20" VerticalOptions="Center" TextColor="White"/>

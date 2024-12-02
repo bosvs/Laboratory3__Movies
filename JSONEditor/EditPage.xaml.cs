@@ -27,14 +27,14 @@ public partial class EditPage : ContentPage
                 if (new[] { ModelEntry.Text, FrameMaterialEntry.Text, WheelDiameterEntry.Text, WeightEntry.Text, DescriptionEntry.Text }
                     .All(string.IsNullOrWhiteSpace))
                 {
-                    bool confirmDelete = await DisplayAlert("Видалення запису", "Ви дійсно хочете видалити цей запис?", "Так", "Ні");
+                    bool confirmDelete = await DisplayAlert("Видалення інформації", "Ви очно хочете видалити це", "Так", "Ні");
                     if (confirmDelete)
                     {
                         mainPage.BikesCollection.Remove(bikeInCollection);
 
                         RefactoryHelper.RewriteJson(mainPage.BikesCollection);
 
-                        await DisplayAlert("Успіх", "Запис видалено!", "OK");
+                        await DisplayAlert("Перемога", "Інформаціія видалено!", "OK");
                         await Navigation.PopAsync();
                         return;
                     }
@@ -47,13 +47,12 @@ public partial class EditPage : ContentPage
                 // Перевірка на наявність порожніх полів
                 if (!RefactoryHelper.IsInvalidInputFieldsAlert(this, ModelEntry, WheelDiameterEntry, WeightEntry)[0])
                 {
-                    await DisplayAlert("Помилка!", "Будь ласка заповніть такі поля:" +
-                    "\n'Модель', 'Матеріал рами' та 'Вага'", "ОК");
+                    await DisplayAlert("Помилка!", "Будь ласка заповніть поля із зірочкою", "ОК");
                     return;
                 }
                 else if (!RefactoryHelper.IsInvalidInputFieldsAlert(this, ModelEntry, WheelDiameterEntry, WeightEntry)[1])
                 {
-                    await DisplayAlert("Помилка!", "Поле: 'Матеріал рами' та 'Вага' повинні містити значення більше 0", "ОК");
+                    await DisplayAlert("Помилка!", "Обов'язкові поля повинні містити правильні значення", "ОК");
                     return;
                 }
 
@@ -68,7 +67,7 @@ public partial class EditPage : ContentPage
                 // Перезапис даних у файл
                 RefactoryHelper.RewriteJson(mainPage.BikesCollection);
 
-                await DisplayAlert("Успіх", "Запис успішно збережено!", "OK");
+                await DisplayAlert("Перемога", "Запис успішно збережено!", "OK");
 
                 await Navigation.PopAsync();
             }

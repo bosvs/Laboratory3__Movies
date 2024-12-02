@@ -13,20 +13,20 @@ public partial class AddBikePage : ContentPage
     /* Дія кнопки "Зберегти" */
     private async void SaveButtonHandler(object sender, EventArgs e)
     {
-        // Перевірка на валідність значень в обов'язкових полях
+        // Валідація
         if (!RefactoryHelper.IsInvalidInputFieldsAlert(this, ModelEntry, WheelDiameterEntry, WeightEntry)[0])
         {
-            await DisplayAlert("Попередження!", "Необхідно заповнити кожне з трьох обов'язкових полів:" +
+            await DisplayAlert("Увага!", "Обов'язкові поля вони на тебе обов'язкові:" +
             "\n\'Модель\', \'Діаметр коліс\' та \'Вага\'", "ОК");
             return;
         }
         else if (!RefactoryHelper.IsInvalidInputFieldsAlert(this, ModelEntry, WheelDiameterEntry, WeightEntry)[1])
         {
-            await DisplayAlert("Попередження!", "Поля: \'Діаметр коліс\' та \'Вага\' повинні містити числові значення більші 0", "ОК");
+            await DisplayAlert("Увага!", "Поля: \'Діаметр дисків\' та \'Вага\' мають бути числами більшими за 0", "ОК");
             return;
         }
 
-        // Створення нового велосипеда
+        // Створення нової авттівки
         var newBike = new Bike
         {
             Model = ModelEntry.Text?.Trim(),
@@ -37,7 +37,7 @@ public partial class AddBikePage : ContentPage
             Description = DescriptionEntry.Text?.Trim()
         };
 
-        // Завантаження існуючих велосипедів з файлу
+        // Загррузка автівок з файлу
         var filePath = Path.Combine(FileSystem.AppDataDirectory, MainPage.FilePath);
         ObservableCollection<Bike> bikesList;
 
@@ -48,7 +48,7 @@ public partial class AddBikePage : ContentPage
         }
         else bikesList = new ObservableCollection<Bike>();
 
-        // Додавання нового велосипеда до списку
+        // Пушнути ну автівку до списку
         bikesList.Add(newBike);
 
         // Збереження оновленого списку у файл
@@ -59,14 +59,14 @@ public partial class AddBikePage : ContentPage
         catch (Exception ex)
         {
             await DisplayAlert("Помлкка", "Під час " +
-                                   "\nПеревірте чи не пошкоджений файл та спробуйте ще раз", "ОК");
+                                   "\nПеревірте, що з вашим файлом", "ОК");
         }
 
-        // Повернення до головної сторінки
+        // Повернення до мейн сторінки
         await Navigation.PopAsync();
     }
 
-    /* Дія кнопки "Відмінити" */
+    // кнопка відміни
     private async void CancelButtonHandler(object sender, EventArgs e)
     {
         await Navigation.PopAsync();
