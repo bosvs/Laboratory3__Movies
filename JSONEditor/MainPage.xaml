@@ -58,7 +58,7 @@
                     <Frame Grid.Row="1" Grid.Column="6" Grid.RowSpan="6" Grid.ColumnSpan="3" BorderColor="Grey" CornerRadius="10">
                         <Grid RowDefinitions="*,*,*,*,*,*,*,*" ColumnDefinitions="Auto, *" ColumnSpacing="10" RowSpacing="10">
                             <Grid Grid.Row="0" Grid.ColumnSpan="2" ColumnDefinitions="*">
-                                <Button Grid.Row="0" Grid.Column="6" BackgroundColor="#617073" TextColor="White" CornerRadius="5" Text="Додати Велосипед" Clicked="AddBikeHandler"/>
+                                <Button Grid.Row="0" Grid.Column="6" BackgroundColor="#556B2F" TextColor="White" CornerRadius="5" Text="Додати Велосипед" Clicked="AddBikeHandler"/>
                             </Grid>
                             <Label Grid.Row="1" Grid.Column="0" WidthRequest="100" Text="Модель:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
                             <Label Grid.Row="2" Grid.Column="0" WidthRequest="100" Text="Рама:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
@@ -67,16 +67,16 @@
                             <Label Grid.Row="5" Grid.Column="0" WidthRequest="100" Text="Тип:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
                             <Label Grid.Row="6" Grid.Column="0" WidthRequest="100" Text="Опис:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
 
-                            <Entry Grid.Row="1" Grid.Column="1" x:Name="ModelEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести модель велосипеда" />
-                            <Entry Grid.Row="2" Grid.Column="1" x:Name="FrameMaterialEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести матеріал рами" />
-                            <Entry Grid.Row="3" Grid.Column="1" x:Name="WheelDiameterEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести діаметр коліс" />
-                            <Entry Grid.Row="4" Grid.Column="1" x:Name="WeightEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести вагу велосипеда" />
-                            <Entry Grid.Row="5" Grid.Column="1" x:Name="TypeEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести тип велосипеда" />
-                            <Entry Grid.Row="6" Grid.Column="1" x:Name="DescriptionEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести опис велосипеда" />
+                            <Entry Grid.Row="1" Grid.Column="1" x:Name="ModelEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести модель велосипеда" BackgroundColor="White" TextColor="Black"/>
+                            <Entry Grid.Row="2" Grid.Column="1" x:Name="FrameMaterialEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести матеріал рами" BackgroundColor="White" TextColor="Black"/>
+                            <Entry Grid.Row="3" Grid.Column="1" x:Name="WheelDiameterEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести діаметр коліс" BackgroundColor="White" TextColor="Black"/>
+                            <Entry Grid.Row="4" Grid.Column="1" x:Name="WeightEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести вагу велосипеда" BackgroundColor="White" TextColor="Black"/>
+                            <Entry Grid.Row="5" Grid.Column="1" x:Name="TypeEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести тип велосипеда" BackgroundColor="White" TextColor="Black"/>
+                            <Entry Grid.Row="6" Grid.Column="1" x:Name="DescriptionEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести опис велосипеда" BackgroundColor="White" TextColor="Black"/>
 
                             <Grid Grid.Row="7" Grid.ColumnSpan="2" ColumnDefinitions="*,*" ColumnSpacing="10">
-                                <Button Grid.Column="0" BackgroundColor="#7A93AC" TextColor="White" CornerRadius="5" Text="Пошук" Clicked="SearchHandler" />
-                                <Button Grid.Column="1" BackgroundColor="#92BCEA" TextColor="White" CornerRadius="5" Text="Очистити" Clicked="ClearFiltersHander" />
+                                <Button Grid.Column="0" BackgroundColor="#4CAF50" TextColor="White" CornerRadius="5" Text="Пошук" Clicked="SearchHandler" />
+                                <Button Grid.Column="1" BackgroundColor="#F44336" TextColor="White" CornerRadius="5" Text="Очистити" Clicked="ClearFiltersHander" />
                             </Grid>
                         </Grid>
                     </Frame>
@@ -101,8 +101,8 @@
                                             <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding WheelDiameter}" />
                                             <Label Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding Weight}" />
                                             <Label Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding Type}" />
-                                            <Button Grid.Row="0" Grid.Column="5" Text="Глянути" BackgroundColor="#92BCEA" Clicked="ViewDescriptionHandler" HeightRequest="10" CornerRadius="10" />
-                                            <Button Grid.Row="0" Grid.Column="6" Text="Редагувати" BackgroundColor="#7A93AC" Clicked="EditBikeHandler" HeightRequest="10" CornerRadius="10" />
+                                            <Button Grid.Row="0" Grid.Column="5" Text="Глянути" BackgroundColor="#6A5ACD" Clicked="ViewDescriptionHandler" HeightRequest="10" CornerRadius="10" TextColor="White"/>
+                                            <Button Grid.Row="0" Grid.Column="6" Text="Редагувати" BackgroundColor="#DAA520" Clicked="EditBikeHandler" HeightRequest="10" CornerRadius="10" TextColor="White"/>
                                             <BoxView Grid.Row="1" Grid.ColumnSpan="6" HeightRequest="10" BackgroundColor="Transparent"/>
                                         </Grid>
                                     </DataTemplate>
@@ -111,7 +111,6 @@
                         </Grid>
                     </Frame>
                 </Grid>
-
             </ScrollView>
         </StackLayout>
     </ScrollView>
