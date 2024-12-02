@@ -62,7 +62,7 @@
                             <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="1.5*,*,0.8*,0.8*,*,*,1.5*" ColumnSpacing="10">
                                 <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start" Text="Модель" FontAttributes="Bold" />
                                 <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start" Text="Марка" FontAttributes="Bold" />
-                                <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Start" Text="Рік випуску" FontAttributes="Bold" />
+                                <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Start" Text="Діаметр дисків" FontAttributes="Bold" />
                                 <Label Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Start" Text="Вага(кг)" FontAttributes="Bold" />
                                 <Label Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalOptions="Start" Text="Тип" FontAttributes="Bold" />
                                 <Label Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Start" Text="Опис" FontAttributes="Bold" />
@@ -99,14 +99,14 @@
                             </Grid>
                             <Label Grid.Row="1" Grid.Column="0" WidthRequest="100" Text="Модель:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
                             <Label Grid.Row="2" Grid.Column="0" WidthRequest="100" Text="Марка:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
-                            <Label Grid.Row="3" Grid.Column="0" WidthRequest="100" Text="Рік випуску:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
+                            <Label Grid.Row="3" Grid.Column="0" WidthRequest="100" Text="Діаметр дисків:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
                             <Label Grid.Row="4" Grid.Column="0" WidthRequest="100" Text="Вага(кг):" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
                             <Label Grid.Row="5" Grid.Column="0" WidthRequest="100" Text="Тип:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
                             <Label Grid.Row="6" Grid.Column="0" WidthRequest="100" Text="Опис:" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
 
                             <Entry Grid.Row="1" Grid.Column="1" x:Name="ModelEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести модель автомобіля" BackgroundColor="White" TextColor="Black"/>
                             <Entry Grid.Row="2" Grid.Column="1" x:Name="FrameMaterialEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести марку автомобіля" BackgroundColor="White" TextColor="Black"/>
-                            <Entry Grid.Row="3" Grid.Column="1" x:Name="WheelDiameterEntry " PlaceholderColor="#7A93AC" Placeholder="Ввести рік випуску" BackgroundColor="White" TextColor="Black"/>
+                            <Entry Grid.Row="3" Grid.Column="1" x:Name="WheelDiameterEntry " PlaceholderColor="#7A93AC" Placeholder="Ввести діаметр дисків" BackgroundColor="White" TextColor="Black"/>
                             <Entry Grid.Row="4" Grid.Column="1" x:Name="WeightEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести вагу автомобіля" BackgroundColor="White" TextColor="Black"/>
                             <Entry Grid.Row="5" Grid.Column="1" x:Name="TypeEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести тип автомобіля" BackgroundColor="White" TextColor="Black"/>
                             <Entry Grid.Row="6" Grid.Column="1" x:Name="DescriptionEntry" PlaceholderColor="#7A93AC" Placeholder="Ввести опис автомобіля" BackgroundColor="White" TextColor="Black"/>

@@ -1,0 +1,82 @@
+[
+  {
+    "Model": "Corolla",
+    "FrameMaterial": "Steel",
+    "WheelDiameter": "15",
+    "Weight": "1300",
+    "Type": "Sedan",
+    "Description": "A compact and fuel-efficient sedan from Toyota."
+  },
+  {
+    "Model": "Mustang",
+    "FrameMaterial": "Aluminum",
+    "WheelDiameter": "18",
+    "Weight": "1600",
+    "Type": "Coupe",
+    "Description": "An iconic American muscle car with powerful performance."
+  },
+  {
+    "Model": "Model S",
+    "FrameMaterial": "Aluminum",
+    "WheelDiameter": "19",
+    "Weight": "2000",
+    "Type": "Sedan",
+    "Description": "A fully electric luxury sedan with cutting-edge technology."
+  },
+  {
+    "Model": "Civic",
+    "FrameMaterial": "Steel",
+    "WheelDiameter": "16",
+    "Weight": "1400",
+    "Type": "Sedan",
+    "Description": "A reliable compact sedan known for its efficiency and longevity."
+  },
+  {
+    "Model": "Camaro",
+    "FrameMaterial": "Aluminum",
+    "WheelDiameter": "17",
+    "Weight": "1700",
+    "Type": "Coupe",
+    "Description": "A high-performance sports car with a bold, aggressive design."
+  },
+  {
+    "Model": "3 Series",
+    "FrameMaterial": "Aluminum",
+    "WheelDiameter": "17",
+    "Weight": "1500",
+    "Type": "Sedan",
+    "Description": "A premium sedan offering luxury, performance, and style."
+  },
+  {
+    "Model": "C-Class",
+    "FrameMaterial": "Aluminum",
+    "WheelDiameter": "18",
+    "Weight": "1600",
+    "Type": "Sedan",
+    "Description": "A luxury sedan combining comfort, performance, and elegance."
+  },
+  {
+    "Model": "A4",
+    "FrameMaterial": "Aluminum",
+    "WheelDiameter": "17",
+    "Weight": "1500",
+    "Type": "Sedan",
+    "Description": "A premium sedan with a refined design and advanced features."
+  },
+  {
+    "Model": "Wrangler",
+    "FrameMaterial": "Steel",
+    "WheelDiameter": "18",
+    "Weight": "1800",
+    "Type": "SUV",
+    "Description": "A rugged off-road vehicle with exceptional 4x4 capabilities."
+  },
+  {
+    "Model": "Q7",
+    "FrameMaterial": "Aluminum",
+    "WheelDiameter": "20",
+    "Weight": "2300",
+    "Type": "SUV",
+    "Description": "A luxury SUV with advanced features and ample space."
+  }
+]

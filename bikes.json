@@ -78,5 +78,13 @@
     "Weight": "12.7",
     "Type": "Гірський",
     "Description": "Цей велосипед оснащений трансмісією Shimano SLX, повітряною вилкою RockShox та чудово підходить для крос-кантрі."
+  },
+  {
+    "Model": "audi",
+    "FrameMaterial": null,
+    "WheelDiameter": "19",
+    "Weight": "23",
+    "Type": null,
+    "Description": null
   }
 ]
