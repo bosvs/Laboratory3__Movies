@@ -20,7 +20,7 @@
             <!-- Styled button -->
             <Button x:Name="InfoButton" 
                 Clicked="InfoButtonHandler"
-                Text="General Information" 
+                Text="Загальна інформація" 
                 VerticalOptions="Start" 
                 HorizontalOptions="End" 
                 BackgroundColor="#6C757D"

@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+п»їusing System.Collections.ObjectModel;
 using System.Text.Json;
 
 namespace JSONEditor;
@@ -14,7 +14,7 @@ public partial class EditPage : ContentPage
         BindingContext = Bike;
     }
 
-    /* Љнопка "‡берегти" */
+    /* РљРЅРѕРїРєР° "Р—Р±РµСЂРµРіС‚Рё" */
     private async void SaveButtonHandler(object sender, EventArgs e)
     {
         try
@@ -27,14 +27,14 @@ public partial class EditPage : ContentPage
                 if (new[] { ModelEntry.Text, FrameMaterialEntry.Text, WheelDiameterEntry.Text, WeightEntry.Text, DescriptionEntry.Text }
                     .All(string.IsNullOrWhiteSpace))
                 {
-                    bool confirmDelete = await DisplayAlert("ЏґдтвердженнЯ видаленнЯ", "‚и дґйсно хочете видалити цей запис?", "’ак", "Ќґ");
+                    bool confirmDelete = await DisplayAlert("Р’РёРґР°Р»РµРЅРЅСЏ Р·Р°РїРёСЃСѓ", "Р’Рё РґС–Р№СЃРЅРѕ С…РѕС‡РµС‚Рµ РІРёРґР°Р»РёС‚Рё С†РµР№ Р·Р°РїРёСЃ?", "РўР°Рє", "РќС–");
                     if (confirmDelete)
                     {
                         mainPage.BikesCollection.Remove(bikeInCollection);
 
                         RefactoryHelper.RewriteJson(mainPage.BikesCollection);
 
-                        await DisplayAlert("“спґх", "‡апис видалено!", "OK");
+                        await DisplayAlert("РЈСЃРїС–С…", "Р—Р°РїРёСЃ РІРёРґР°Р»РµРЅРѕ!", "OK");
                         await Navigation.PopAsync();
                         return;
                     }
@@ -44,20 +44,20 @@ public partial class EditPage : ContentPage
                     }
                 }
 
-                // Џеревґрка на валґднґсть заповнених полґв
+                // РџРµСЂРµРІС–СЂРєР° РЅР° РЅР°СЏРІРЅС–СЃС‚СЊ РїРѕСЂРѕР¶РЅС–С… РїРѕР»С–РІ
                 if (!RefactoryHelper.IsInvalidInputFieldsAlert(this, ModelEntry, WheelDiameterEntry, WeightEntry)[0])
                 {
-                    await DisplayAlert("Џомилка!", "Ќевґрно заповненґ такґ полЯ:" +
-                    "\n\'Њодель\', \'Њатерґал рами\' та \'‚ага\'", "ЋЉ");
+                    await DisplayAlert("РџРѕРјРёР»РєР°!", "Р‘СѓРґСЊ Р»Р°СЃРєР° Р·Р°РїРѕРІРЅС–С‚СЊ С‚Р°РєС– РїРѕР»СЏ:" +
+                    "\n'РњРѕРґРµР»СЊ', 'РњР°С‚РµСЂС–Р°Р» СЂР°РјРё' С‚Р° 'Р’Р°РіР°'", "РћРљ");
                     return;
                 }
                 else if (!RefactoryHelper.IsInvalidInputFieldsAlert(this, ModelEntry, WheelDiameterEntry, WeightEntry)[1])
                 {
-                    await DisplayAlert("Џомилка!", "ЏолЯ: \'Њатерґал рами\' та \'‚ага\' повиннґ мґстити значеннЯ бґльше 0", "ЋЉ");
+                    await DisplayAlert("РџРѕРјРёР»РєР°!", "РџРѕР»Рµ: 'РњР°С‚РµСЂС–Р°Р» СЂР°РјРё' С‚Р° 'Р’Р°РіР°' РїРѕРІРёРЅРЅС– РјС–СЃС‚РёС‚Рё Р·РЅР°С‡РµРЅРЅСЏ Р±С–Р»СЊС€Рµ 0", "РћРљ");
                     return;
                 }
 
-                // ЋновленнЯ даних
+                // Р—Р±РµСЂРµР¶РµРЅРЅСЏ РґР°РЅРёС…
                 bikeInCollection.Model = ModelEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.FrameMaterial = FrameMaterialEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.WheelDiameter = WheelDiameterEntry.Text?.Trim() ?? string.Empty;
@@ -65,25 +65,25 @@ public partial class EditPage : ContentPage
                 bikeInCollection.Type = TypeEntry.Text?.Trim() ?? string.Empty;
                 bikeInCollection.Description = DescriptionEntry.Text?.Trim() ?? string.Empty;
 
-                // ЏерезаписуваннЯ оновлених даних у файл
+                // РџРµСЂРµР·Р°РїРёСЃ РґР°РЅРёС… Сѓ С„Р°Р№Р»
                 RefactoryHelper.RewriteJson(mainPage.BikesCollection);
 
-                await DisplayAlert("“спґх", "‡апис успґшно збережено!", "OK");
+                await DisplayAlert("РЈСЃРїС–С…", "Р—Р°РїРёСЃ СѓСЃРїС–С€РЅРѕ Р·Р±РµСЂРµР¶РµРЅРѕ!", "OK");
 
                 await Navigation.PopAsync();
             }
             else
             {
-                await DisplayAlert("Џомилка", "Ќевґдомий тип головно» сторґнки.", "OK");
+                await DisplayAlert("РџРѕРјРёР»РєР°", "Р’РёРЅРёРєР»Р° РїРѕРјРёР»РєР° РїСЂРё РѕС‚СЂРёРјР°РЅРЅС– РіРѕР»РѕРІРЅРѕС— СЃС‚РѕСЂС–РЅРєРё.", "OK");
             }
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Џомилка", $"Ќе вдалосЯ зберегти данґ. ’ехнґчна помилка:\n{ex.Message}", "OK");
+            await DisplayAlert("РџРѕРјРёР»РєР°", $"РЎС‚Р°Р»Р°СЃСЏ РїРѕРјРёР»РєР° РїСЂРё Р·Р±РµСЂРµР¶РµРЅРЅС– РґР°РЅРёС…. РўРµС…РЅС–С‡РЅР° РїРѕРјРёР»РєР°:\n{ex.Message}", "OK");
         }
     }
 
-    /* Љнопка "‘касувати" */
+    /* РљРЅРѕРїРєР° "РЎРєР°СЃСѓРІР°С‚Рё" */
     private async void CancelButtonHandler(object sender, EventArgs e)
     {
         await Navigation.PopAsync();
