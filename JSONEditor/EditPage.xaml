@@ -2,45 +2,43 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JSONEditor.EditPage"
-             Title="EditPage"
+             Title="Редагування Велосипеда"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#232526" Offset="0.0" />
-            <!-- Charcoal Gray -->
-            <GradientStop Color="#414345" Offset="1.0" />
-            <!-- Dark Slate Gray -->
+            <GradientStop Color="#1B1B1B" Offset="0.0" />
+            <!-- Near Black -->
+            <GradientStop Color="#2E2E2E" Offset="1.0" />
+            <!-- Dark Gray -->
         </LinearGradientBrush>
     </ContentPage.Background>
-    
+
     <ScrollView>
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
-            <StackLayout>
-                    <Frame BorderColor="DarkOliveGreen" BackgroundColor="#28A745" Margin="0,5,0,10">
-                        <Label Text="Редагування велосипеда" TextColor="White" FontSize="36" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center" />
-                    </Frame>
-                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,*" ColumnDefinitions="Auto,*" RowSpacing="15" ColumnSpacing="15" VerticalOptions="Center" HorizontalOptions="Center">
-                        <Label Grid.Row="1" Grid.Column="0" Text="Модель*:" WidthRequest="100" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        <Label Grid.Row="2" Grid.Column="0" Text="Матеріал рами:" WidthRequest="100" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        <Label Grid.Row="3" Grid.Column="0" Text="Діаметр коліс*:" WidthRequest="100" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        <Label Grid.Row="4" Grid.Column="0" Text="Вага(кг)*:" WidthRequest="100" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        <Label Grid.Row="5" Grid.Column="0" Text="Тип:" WidthRequest="100" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        <Label Grid.Row="6" Grid.Column="0" Text="Опис:" WidthRequest="100" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Frame BorderColor="DarkOliveGreen" BackgroundColor="#28A745" Margin="0,5,0,10">
+                <Label Text="Редагування велосипеда" TextColor="White" FontSize="36" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+            </Frame>
 
-                        <Entry WidthRequest="600" BackgroundColor="White" x:Name="ModelEntry" Text="{Binding Model}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center"/>
-                        <Entry WidthRequest="600" BackgroundColor="White" x:Name="FrameMaterialEntry" Text="{Binding FrameMaterial}" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center"/>
-                        <Entry WidthRequest="600" BackgroundColor="White" x:Name="WheelDiameterEntry" Text="{Binding WheelDiameter}" Grid.Row="3" Grid.Column="1" HorizontalOptions="Center"/>
-                        <Entry WidthRequest="600" BackgroundColor="White" x:Name="WeightEntry" Text="{Binding Weight}" Grid.Row="4" Grid.Column="1" HorizontalOptions="Center"/>
-                        <Entry WidthRequest="600" BackgroundColor="White" x:Name="TypeEntry" Text="{Binding Type}" Grid.Row="5" Grid.Column="1" HorizontalOptions="Center"/>
-                        <Entry WidthRequest="600" BackgroundColor="White" x:Name="DescriptionEntry" Text="{Binding Description}" Grid.Row="6" Grid.Column="1"  HorizontalOptions="Center"/>
-                    </Grid>
-                </StackLayout>
-            
-            
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*" RowSpacing="15" ColumnSpacing="15" VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Grid.Row="0" Grid.Column="0" Text="Модель*:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Матеріал рами:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
+                <Label Grid.Row="2" Grid.Column="0" Text="Діаметр коліс*:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
+                <Label Grid.Row="3" Grid.Column="0" Text="Вага(кг)*:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
+                <Label Grid.Row="4" Grid.Column="0" Text="Тип:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
+                <Label Grid.Row="5" Grid.Column="0" Text="Опис:" FontSize="20" VerticalOptions="Center" TextColor="White"/>
+
+                <Entry WidthRequest="300" BackgroundColor="White" x:Name="ModelEntry" Text="{Binding Model}" Grid.Row="0" Grid.Column="1"/>
+                <Entry WidthRequest="300" BackgroundColor="White" x:Name="FrameMaterialEntry" Text="{Binding FrameMaterial}" Grid.Row="1" Grid.Column="1"/>
+                <Entry WidthRequest="300" BackgroundColor="White" x:Name="WheelDiameterEntry" Text="{Binding WheelDiameter}" Grid.Row="2" Grid.Column="1"/>
+                <Entry WidthRequest="300" BackgroundColor="White" x:Name="WeightEntry" Text="{Binding Weight}" Grid.Row="3" Grid.Column="1"/>
+                <Entry WidthRequest="300" BackgroundColor="White" x:Name="TypeEntry" Text="{Binding Type}" Grid.Row="4" Grid.Column="1"/>
+                <Entry WidthRequest="300" BackgroundColor="White" x:Name="DescriptionEntry" Text="{Binding Description}" Grid.Row="5" Grid.Column="1"/>
+            </Grid>
+
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
-                <Button Text="Зберегти" FontSize="28" TextColor="White" CornerRadius="0" BackgroundColor="#7A93AC" BorderWidth="1" Clicked="SaveButtonHandler" />
-                <Button Text="Скасувати" FontSize="28" TextColor="White" CornerRadius="0" BackgroundColor="#92BCEA" BorderWidth="1" Clicked="CancelButtonHandler" />
+                <Button Text="Зберегти" FontSize="24" TextColor="White" CornerRadius="10" BackgroundColor="#4CAF50" Clicked="SaveButtonHandler" />
+                <Button Text="Скасувати" FontSize="24" TextColor="White" CornerRadius="10" BackgroundColor="#F44336" Clicked="CancelButtonHandler" />
             </HorizontalStackLayout>
         </StackLayout>
     </ScrollView>
